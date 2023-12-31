@@ -1,18 +1,17 @@
 arr = []
-
 for i in range(9):
-    inner_arr = list(map(int, input().split()))
-    arr.append(inner_arr)
+    arr.append(list(map(int, input().split())))
 
 max = -1
-where_x = where_y = 0
+max_x = None
+max_y = None
 
 for i in range(9):
     for j in range(9):
-        if arr[i][j] > max:
+        if max < arr[i][j]:
             max = arr[i][j]
-            where_x = i+1
-            where_y = j+1
+            max_x = i+1
+            max_y = j+1
 
 print(max)
-print(where_x, where_y)
+print(max_x, max_y)
